@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "wux-cell-group": "../../assets/wuxui/cell-group/index",
+        "wux-cell": "../../assets/wuxui/cell/index",
+        "wux-textarea": "../../assets/wuxui/textarea/index",
+        "wux-button":"../../assets/wuxui/button/index",
+        "wux-toptips": "../../assets/wuxui/toptips/index",
+        "wux-dialog": "../../assets/wuxui/dialog/index"
+    },
+    "navigationBarTitleText": "编辑"
+}

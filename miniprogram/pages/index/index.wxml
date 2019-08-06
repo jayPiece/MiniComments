@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<wxs module="filters" src="../../utils/filters.wxs"></wxs>
+
+<wux-toast id="wux-toast" />
+
+<view class="container">
+    <!-- 底部留言板展示列表(包括留言入口button) -->
+    <view class="back_container">
+        <view class="back_mes_enter">
+            <wux-button block type="balanced" open-type="getUserInfo" bindgetuserinfo="goWrite">留言</wux-button>
+        </view>
+        <view style="width:92%;height:0rpx;margin:6rpx auto 0rpx;border-top:1rpx solid rgba(204,204,204,0.6);"></view>
+        <view class="back_list">
+            <view class="list_content">
+                <scroll-view scroll-y style="height:100%;" bindscrolltoupper="upper" bindscrolltolower="lower"
+                    bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                    <view class="list_item" wx:for="{{messageList}}" wx:key="index">
+                        <view class="item_info">
+                            <!-- 头像 -->
+                            <view class="info_img">
+                                <image style="width:80rpx;height:80rpx;border-radius:50%;" src="{{item.headImgUrl}}" alt=""></image>
+                            </view>
+                            <!-- 昵称 时间 -->
+                            <view class="info_name">
+                                <view class="name_text">{{item.name}}</view>
+                                <view class="name_time">{{filters.formatTime(item.time)}}</view>
+                            </view>
+                        </view>
+                        <!-- 留言文字区 -->
+                        <text class="item_text">{{item.text}}</text>
+                        <!-- 评论文字区 -->
+                        <view class="item_comment" wx:if="{{item.reviews.length>0}}">
+                            <view class="comment_list" wx:for="{{item.reviews}}" wx:for-index="{{idx}}" wx:key="{{idx}}" wx:for-item="coms">
+                                <span style="color:#00BFFF;">{{coms.name}}:</span>{{coms.commentText}}
+                            </view>
+                        </view>
+                        <view class="item_setter">
+                            <!-- 点赞 -->
+                            <view class="lover_content" style="display:none;">
+                                <view class="lover_num">{{item.stars}}</view>
+                                <view class="lover_rose">
+                                    <wux-icon type="ios-rose" size="22" />
+                                </view>
+                            </view>
+                            <!-- 评论 -->
+                            <view data-idx="{{index}}" class="setter_comment" bindtap="showComment">
+                                <wux-icon type="ios-chatboxes" size="22"/>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 评论输入遮罩 -->
+    <view class="comment_container" wx:if="{{commentVisible}}" catchtap="showComment">
+        <!-- 底部输入框 -->
+        <view class="editor_content" style="bottom:{{commentBottomHeight}}px;">
+            <textarea value="{{commentValue}}" bindinput="getCommentValue" placeholder=".." show-confirm-bar="{{completeBoolean}}" auto-height auto-focus adjust-position="{{completeBoolean}}" bindfocus="setCommentPosition" bindblur="initCommentHeight"/>
+            <view class="sendComment" bindtap="addComment">
+                <wux-icon type="ios-paw" size="28" />
+            </view>
+        </view>
+    </view>
+</view>

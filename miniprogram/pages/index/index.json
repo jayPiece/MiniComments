@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "wux-button":"../../assets/wuxui/button/index",
+        "wux-toast": "../../assets/wuxui/toast/index",
+        "wux-icon": "../../assets/wuxui/icon/index"
+    },
+    "navigationBarTitleText": ""
+}

@@ -1,0 +1,23 @@
+function setDb(num) {
+	//补零操作
+	if (num < 10) {
+		return '0' + num;
+	} else {
+		return '' + num;
+	}
+}
+function formatTime(timer){
+    var time = getDate(timer);
+    var year = time.getFullYear();//年
+    var mon = setDb(time.getMonth() + 1);//0 
+    var day = setDb(time.getDate());//24
+    var hour = setDb(time.getHours());//时
+    var min = setDb(time.getMinutes());//分
+    var sec = setDb(time.getSeconds());//秒
+    
+    return year+'年'+mon+'月'+day+'日 '+hour+':'+min;
+}
+
+module.exports = {
+    formatTime:formatTime
+};

@@ -1,0 +1,19 @@
+<!--pages/editor/editor.wxml-->
+<wux-toptips id="wux-toptips" />
+<wux-dialog id="wux-dialog" />
+<wux-dialog id="wux-dialog--alert" />
+
+
+<view>
+    <view class="edit_content">
+        <wux-cell-group>
+            <wux-cell hover-class="none">
+                <wux-textarea value="{{textValue}}" bind:change="getEditorValue" controlled focus cursor="1" hasCount maxlength="255" rows="5" cursorSpacing="80" placeholder="..." />
+            </wux-cell>
+        </wux-cell-group>
+    </view>
+    <view class="edit_control">
+        <wux-button size="small" type="balanced" bindtap="submitText">发表</wux-button>
+        <wux-button size="small" type="dark" bindtap="clearText">清除</wux-button>
+    </view>
+</view>

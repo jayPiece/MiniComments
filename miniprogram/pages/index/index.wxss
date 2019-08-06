@@ -1,0 +1,138 @@
+/**index.wxss**/
+page,.container{
+    width: 100%;
+    height: 100%;
+}
+.back_container{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+.back_mes_enter{
+    width:100%;
+    padding:20rpx 60rpx 0rpx;
+    box-sizing:border-box;
+}
+.back_list{
+    width:100%;
+    padding:20rpx;
+    box-sizing: border-box;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+.list_content{
+    width:100%;
+    flex:1;
+    overflow:hidden;
+}
+.list_item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30rpx 30rpx 0rpx;
+    box-sizing:border-box;
+    background-color:#f2f2f2;
+    margin-bottom:14rpx;
+    border-radius:8rpx;
+
+}
+.item_info {
+    width: 100%;
+    height: 120rpx;
+    display:flex;
+    align-content:center;
+}
+.info_img{
+    margin:0 20rpx;
+}
+.info_name{
+    flex:1;
+    height:100%;
+}
+.info_name .name_text{
+    font-size:16px;
+}
+.info_name .name_time{
+    font-size:20rpx;
+}
+.item_text{
+    font-size:14px;
+}
+.item_setter{
+    width:100%;
+    padding:16rpx 0 6rpx;
+    display:flex;
+    justify-content: flex-end;
+}
+.item_comment{
+    margin-top:18rpx;
+    width:100%;
+    box-sizing:border-box;
+    padding:6rpx;
+    background-color:#F5F5DC;
+    border-radius:8rpx;
+    font-size:28rpx;
+}
+
+
+.lover_content{
+    display:flex;
+    align-items:flex-end;
+
+}
+.lover_rose{
+    margin-left:14rpx;
+    color:#666666;
+}
+.lover_num{
+    font-size:14px;
+}
+.setter_comment{
+    margin-left:38rpx;
+    color:#666666;
+}
+.setter_comment:active{
+    color:#222222;
+}
+
+/* 评论遮罩 */
+.comment_container{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    background-color:rgba(0,0,0,0.6);
+}
+.editor_content {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    padding: 0 18rpx;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+.editor_content textarea {
+    flex: 1;
+    padding: 20rpx;
+    max-height: 200rpx;
+    background-color: white;
+    margin: 20rpx 30rpx 30rpx 0;
+    border-radius: 6rpx;
+}
+.editor_content i {
+    font-size: 26px;
+}
+.sendComment{
+    color:#666666;
+}
+.sendComment:active{
+    color:#222222;
+}

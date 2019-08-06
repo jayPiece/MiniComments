@@ -1,0 +1,26 @@
+/* pages/editor/editor.wxss */
+.edit_content{
+    width:92%;
+    margin:0 auto;
+}
+/* 组件样式类 */
+.wux-cell-group__bd:after{
+    border-top-width:0rpx!important;
+}
+.wux-textarea__item{
+    font-size:14px!important;
+}
+.edit_control{
+    width:92%;
+    margin:0 auto;
+    padding:14rpx 0;
+}
+.edit_control button{
+    float:right;
+    margin-left:30rpx;
+    width:100rpx;
+    font-size:14px;
+}
+textarea{
+    font-size:14px;
+}
